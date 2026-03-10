@@ -156,6 +156,7 @@ h6 {
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
+  background-color: #fff;
 }
 
 .header .logo {
@@ -174,21 +175,26 @@ h6 {
   color: var(--heading-color);
 }
 
+
 .scrolled .header {
   isolation: isolate;
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
+
+/*
 .scrolled .header::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
   pointer-events: none;
   z-index: -1;
 }
+*/
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -215,7 +221,7 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 14px;
+    font-size: 16px;
     font-family: var(--nav-font);
     font-weight: 400;
     display: flex;
@@ -265,7 +271,7 @@ h6 {
 
   .navmenu .dropdown ul a {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 16px;
     text-transform: none;
     color: var(--nav-dropdown-color);
   }
@@ -783,6 +789,175 @@ section,
   text-wrap: balance;
 }
 
+
+
+/*--------------------------------------------------------------
+# HeroCar Section
+--------------------------------------------------------------*/
+.herocar {
+  padding: 0;
+  margin-top:88px
+}
+@media (max-width: 768px) {
+  .herocar {
+    margin-top:66px
+  }
+}
+
+.herocar .carousel {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  position: relative;
+}
+
+.herocar img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.herocar .carousel-item {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.herocar .carousel-item:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 60%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.herocar .carousel-container {
+  position: absolute;
+  inset: 90px 64px 64px 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.herocar h2 {
+  margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 700;
+  animation: fadeInDown 1s both;
+}
+
+@media (max-width: 768px) {
+  .herocar h2 {
+    font-size: 30px;
+  }
+}
+
+.herocar p {
+  animation: fadeInDown 1s both 0.2s;
+}
+
+@media (min-width: 1024px) {
+  .herocar h2,
+  .herocar p {
+    max-width: 60%;
+  }
+}
+
+.herocar .btn-get-started {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  animation: fadeInUp 1s both 0.4s;
+}
+
+.herocar .btn-get-started:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.herocar .carousel-control-prev,
+.herocar .carousel-control-next {
+  width: 10%;
+  transition: 0.3s;
+  opacity: 0.5;
+}
+
+.herocar .carousel-control-prev:focus,
+.herocar .carousel-control-next:focus {
+  opacity: 0.5;
+}
+
+.herocar .carousel-control-prev:hover,
+.herocar .carousel-control-next:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 1024px) {
+  .herocar .carousel-control-prev,
+  .herocar .carousel-control-next {
+    width: 5%;
+  }
+}
+
+.herocar .carousel-control-next-icon,
+.herocar .carousel-control-prev-icon {
+  background: none;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.herocar .carousel-indicators {
+  list-style: none;
+}
+
+.herocar .carousel-indicators li {
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -974,6 +1149,10 @@ section,
     margin-top: 3rem;
   }
 }
+
+
+
+
 
 /*--------------------------------------------------------------
 # About Section
