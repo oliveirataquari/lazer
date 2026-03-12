@@ -318,7 +318,7 @@ h6 {
     color: #fff;
   }
   .navmenu .btn-contact i {
-    margin-right: 5px;
+    margin-right: 8px;
   }
   .navmenu .btn-contact:hover {
     background: color-mix(in srgb, var(--accent-color), transparent 20%);
@@ -4500,4 +4500,16 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+
+
+/* Add Tiago */
+
+.hide {
+  display: none !important;
+}
+
+.gslide-image img {
+  border-radius: 8px;
 }
